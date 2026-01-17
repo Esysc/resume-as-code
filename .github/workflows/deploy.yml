@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -36,7 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      # Python: Generate JSON for web app
+      # Python: Generate CV outputs to dist/
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
@@ -44,16 +48,16 @@ jobs:
           pip install -r backend/requirements.txt
           python backend/generate.py
 
-      # React: Build app
+      # React: Build app (outputs to ../dist, merging with generated files)
       - uses: actions/setup-node@v6
         with:
           node-version: "22"
       - run: |
           cd web
           npm install
-          npm run build
+          npm run build -- --emptyOutDir
 
-      # Deploy to Pages (vite outputs directly to ../dist)
+      # Deploy to Pages
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
