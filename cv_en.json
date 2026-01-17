@@ -1,0 +1,192 @@
+{
+  "personal": {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "phone": "+1 (555) 123-4567",
+    "location": "San Francisco, CA, USA",
+    "birth_date": "1990-05-15"
+  },
+  "summary": "Full-stack software engineer with 8+ years of experience building scalable systems. Expertise in cloud infrastructure, DevOps, and Python. Passionate about infrastructure as code and automation. Strong track record of leading technical initiatives and mentoring junior engineers.\n",
+  "experience": [
+    {
+      "id": "exp_1",
+      "company": "Tech Corp",
+      "title": "Senior Software Engineer",
+      "period": "2021 - Present",
+      "location": "San Francisco, CA",
+      "technologies": [
+        "Python",
+        "Kubernetes",
+        "AWS",
+        "PostgreSQL",
+        "GitOps"
+      ],
+      "description": "Led architecture and implementation of microservices platform serving 10M+ users. Designed and built Kubernetes infrastructure reducing deployment times by 60%. Mentored team of 4 junior engineers. Established automated testing and CI/CD pipelines using GitHub Actions. Reduced system latency by 40% through optimization work.\n"
+    },
+    {
+      "id": "exp_2",
+      "company": "StartupXYZ",
+      "title": "Software Engineer",
+      "period": "2018 - 2021",
+      "location": "Palo Alto, CA",
+      "technologies": [
+        "Python",
+        "React",
+        "Docker",
+        "GCP"
+      ],
+      "description": "Built backend services handling 100k requests/day. Designed and implemented real-time data pipeline using Apache Kafka. Developed React frontend components used by 50k+ users. Implemented infrastructure-as-code using Terraform, reducing provisioning time from days to minutes.\n"
+    },
+    {
+      "id": "exp_3",
+      "company": "DataSoft",
+      "title": "Junior Software Engineer",
+      "period": "2016 - 2018",
+      "location": "Mountain View, CA",
+      "technologies": [
+        "Python",
+        "MySQL",
+        "Linux"
+      ],
+      "description": "Developed Python backend services for analytics platform. Optimized database queries reducing query times by 70%. Implemented automated testing increasing code coverage to 85%. Participated in on-call rotation and resolved production incidents.\n"
+    }
+  ],
+  "education": [
+    {
+      "id": "edu_1",
+      "degree": "Bachelor of Science in Computer Science",
+      "school": "University of California, Berkeley",
+      "graduation_year": 2016,
+      "description": "Relevant coursework: Distributed Systems, Algorithms, Operating Systems, Database Systems, Software Engineering.\n"
+    },
+    {
+      "id": "edu_2",
+      "degree": "AWS Certified Solutions Architect - Professional",
+      "school": "Amazon Web Services",
+      "graduation_year": 2022,
+      "description": "Certification in AWS architecture and design. Hands-on experience with EC2, RDS, S3, Lambda, and other AWS services.\n"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Backend & Infrastructure",
+      "items": [
+        "Python",
+        "Kubernetes",
+        "Docker",
+        "Terraform",
+        "AWS",
+        "GCP",
+        "Linux"
+      ]
+    },
+    {
+      "category": "Databases & Streaming",
+      "items": [
+        "PostgreSQL",
+        "MySQL",
+        "Apache Kafka",
+        "Redis"
+      ]
+    },
+    {
+      "category": "Frontend",
+      "items": [
+        "React",
+        "JavaScript",
+        "HTML/CSS",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "category": "DevOps & Tools",
+      "items": [
+        "GitHub Actions",
+        "Jenkins",
+        "GitOps",
+        "Prometheus",
+        "ELK Stack"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert_1",
+      "title": "AWS Certified Solutions Architect - Professional",
+      "issuer": "Amazon Web Services",
+      "issued_date": "2022-06-15",
+      "expires_date": "2025-06-15"
+    },
+    {
+      "id": "cert_2",
+      "title": "Kubernetes Application Developer (CKAD)",
+      "issuer": "Cloud Native Computing Foundation",
+      "issued_date": "2021-09-20",
+      "expires_date": "2024-09-20"
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "level": "Native"
+    },
+    {
+      "name": "Spanish",
+      "level": "Intermediate"
+    },
+    {
+      "name": "Mandarin",
+      "level": "Basic"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj_1",
+      "title": "Open Source Kubernetes Operator",
+      "technologies": [
+        "Go",
+        "Kubernetes",
+        "Docker"
+      ],
+      "description": "Created open-source Kubernetes operator for automated database management. 10k+ downloads. Published in Helm Charts.\n",
+      "url": "https://github.com/example/db-operator"
+    },
+    {
+      "id": "proj_2",
+      "title": "Python CLI Tool for Infrastructure",
+      "technologies": [
+        "Python",
+        "Click",
+        "AWS SDK"
+      ],
+      "description": "Built CLI tool for infrastructure automation, used by 200+ developers. Supports AWS, GCP, and Kubernetes.\n",
+      "url": "https://github.com/example/infra-cli"
+    }
+  ],
+  "translations": {
+    "en": {
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "projects": "Projects",
+      "certifications": "Certifications",
+      "summary": "Summary"
+    },
+    "fr": {
+      "experience": "Expérience",
+      "education": "Éducation",
+      "skills": "Compétences",
+      "projects": "Projets",
+      "certifications": "Certifications",
+      "summary": "Résumé"
+    },
+    "it": {
+      "experience": "Esperienze",
+      "education": "Istruzione",
+      "skills": "Competenze",
+      "projects": "Progetti",
+      "certifications": "Certificazioni",
+      "summary": "Riassunto"
+    }
+  }
+}
