@@ -4,14 +4,25 @@
     "email": "john.doe@example.com",
     "phone": "+1 (555) 123-4567",
     "location": "San Francisco, CA, USA",
-    "birth_date": "1990-05-15"
+    "birth_date": "1990-05-15",
+    "website": "https://johndoe.dev",
+    "socials": [
+      {
+        "platform": "linkedin",
+        "url": "https://linkedin.com/in/johndoe"
+      },
+      {
+        "platform": "github",
+        "url": "https://github.com/johndoe"
+      }
+    ]
   },
   "summary": "Ingénieur logiciel full-stack avec 8+ ans d'expérience dans la construction de systèmes scalables. Expertise en infrastructure cloud, DevOps et Python. Passionné par l'infrastructure as code et l'automatisation. Forte expérience de leadership technique et de mentorat des ingénieurs juniors.\n",
   "experience": [
     {
       "id": "exp_1",
       "company": "Tech Corp",
-      "title": "Senior Software Engineer",
+      "title": "Ingénieur Logiciel Senior",
       "period": "2021 - Present",
       "location": "San Francisco, CA",
       "technologies": [
@@ -21,12 +32,12 @@
         "PostgreSQL",
         "GitOps"
       ],
-      "description": "Dirigé l'architecture et la mise en œuvre d'une plateforme de microservices servant 10 millions d'utilisateurs. Conçu et construit une infrastructure Kubernetes réduisant les temps de déploiement de 60 %. Mentoré une équipe de 4 ingénieurs juniors. Établi des pipelines de test automatisés et CI/CD utilisant GitHub Actions. Réduit la latence du système de 40 % grâce à des travaux d'optimisation.\n"
+      "description": "Dirigé l'architecture et la mise en œuvre d'une plateforme de microservices servant 10 millions d'utilisateurs. Conçu et construit une infrastructure Kubernetes réduisant les temps de déploiement de 60 %. Mentoré une équipe de 4 ingénieurs juniors. Établi des pipelines de test automatisés et CI/CD utilisant GitHub Actions. Réduit la latence du système de 40 %.\n"
     },
     {
       "id": "exp_2",
       "company": "StartupXYZ",
-      "title": "Software Engineer",
+      "title": "Ingénieur Logiciel",
       "period": "2018 - 2021",
       "location": "Palo Alto, CA",
       "technologies": [
@@ -35,12 +46,12 @@
         "Docker",
         "GCP"
       ],
-      "description": "Construit des services backend traitant 100 000 demandes par jour. Conçu et implémenté un pipeline de données en temps réel utilisant Apache Kafka. Développé des composants React frontend utilisés par 50 000+ utilisateurs. Implémenté l'infrastructure-as-code utilisant Terraform, réduisant le temps de provisionnement de jours à minutes.\n"
+      "description": "Construit des services backend traitant 100 000 demandes par jour. Conçu et implémenté un pipeline de données en temps réel utilisant Apache Kafka. Développé des composants React frontend utilisés par 50 000+ utilisateurs. Implémenté l'infrastructure-as-code utilisant Terraform.\n"
     },
     {
       "id": "exp_3",
       "company": "DataSoft",
-      "title": "Software Engineer",
+      "title": "Ingénieur Logiciel Junior",
       "period": "2016 - 2018",
       "location": "Mountain View, CA",
       "technologies": [
@@ -48,7 +59,7 @@
         "MySQL",
         "Linux"
       ],
-      "description": "Développé des applications web Python pour la plateforme d'analyse de données. Optimisé les requêtes de base de données réduisant les temps de réponse de 70 %. Implémenté des tests automatisés augmentant la couverture de test à 85 %. Collaboré avec l'équipe produit pour livrer des fonctionnalités à temps.\n"
+      "description": "Développé des applications web Python pour la plateforme d'analyse de données. Optimisé les requêtes de base de données réduisant les temps de réponse de 70 %. Implémenté des tests automatisés augmentant la couverture de test à 85 %.\n"
     }
   ],
   "education": [
@@ -62,29 +73,31 @@
     {
       "id": "edu_2",
       "degree": "Master en Génie Logiciel",
-      "school": "Stanford University",
-      "graduation_year": 2020,
+      "school": "Amazon Web Services",
+      "graduation_year": 2022,
       "description": "Focus sur l'architecture logicielle, les pratiques DevOps et l'infrastructure cloud. Projet de thèse sur l'automatisation de l'infrastructure.\n"
     }
   ],
   "skills": [
     {
-      "category": "Backend et Infrastructure",
+      "category": "Backend & Infrastructure",
       "items": [
         "Python",
         "Kubernetes",
         "Docker",
         "Terraform",
         "AWS",
-        "GCP"
+        "GCP",
+        "Linux"
       ]
     },
     {
-      "category": "Bases de Données",
+      "category": "Databases & Streaming",
       "items": [
         "PostgreSQL",
         "MySQL",
-        "Apache Kafka"
+        "Apache Kafka",
+        "Redis"
       ]
     },
     {
@@ -92,7 +105,18 @@
       "items": [
         "React",
         "JavaScript",
+        "HTML/CSS",
         "Tailwind CSS"
+      ]
+    },
+    {
+      "category": "DevOps & Tools",
+      "items": [
+        "GitHub Actions",
+        "Jenkins",
+        "GitOps",
+        "Prometheus",
+        "ELK Stack"
       ]
     }
   ],
@@ -102,21 +126,28 @@
       "title": "AWS Certified Solutions Architect - Professional",
       "issuer": "Amazon Web Services",
       "issued_date": "2022-06-15",
-      "expires_date": null
+      "expires_date": "2025-06-15"
+    },
+    {
+      "id": "cert_2",
+      "title": "Kubernetes Application Developer (CKAD)",
+      "issuer": "Cloud Native Computing Foundation",
+      "issued_date": "2021-09-20",
+      "expires_date": "2024-09-20"
     }
   ],
   "languages": [
     {
-      "name": "Français",
-      "level": "Natif"
+      "name": "English",
+      "level": "Native"
     },
     {
-      "name": "Anglais",
-      "level": "Courant"
+      "name": "Spanish",
+      "level": "Intermediate"
     },
     {
-      "name": "Espagnol",
-      "level": "Intermédiaire"
+      "name": "Mandarin",
+      "level": "Basic"
     }
   ],
   "projects": [
@@ -150,7 +181,8 @@
       "skills": "Skills",
       "projects": "Projects",
       "certifications": "Certifications",
-      "summary": "Summary"
+      "summary": "Summary",
+      "languages": "Languages"
     },
     "fr": {
       "experience": "Expérience",
@@ -158,7 +190,8 @@
       "skills": "Compétences",
       "projects": "Projets",
       "certifications": "Certifications",
-      "summary": "Résumé"
+      "summary": "Résumé",
+      "languages": "Langues"
     },
     "it": {
       "experience": "Esperienze",
@@ -166,7 +199,8 @@
       "skills": "Competenze",
       "projects": "Progetti",
       "certifications": "Certificazioni",
-      "summary": "Riassunto"
+      "summary": "Riassunto",
+      "languages": "Lingue"
     }
   }
 }

@@ -4,14 +4,25 @@
     "email": "john.doe@example.com",
     "phone": "+1 (555) 123-4567",
     "location": "San Francisco, CA, USA",
-    "birth_date": "1990-05-15"
+    "birth_date": "1990-05-15",
+    "website": "https://johndoe.dev",
+    "socials": [
+      {
+        "platform": "linkedin",
+        "url": "https://linkedin.com/in/johndoe"
+      },
+      {
+        "platform": "github",
+        "url": "https://github.com/johndoe"
+      }
+    ]
   },
-  "summary": "Ingegnere software full-stack con 8+ anni di esperienza nella costruzione di sistemi scalabili. Competenza in infrastruttura cloud, DevOps e Python. Appassionato di infrastructure as code e automazione. Forte track record di leadership tecnica e mentoring di ingegneri junior. mentoring di ingegneri junior.\n",
+  "summary": "Ingegnere software full-stack con 8+ anni di esperienza nella costruzione di sistemi scalabili. Esperto in infrastruttura cloud, DevOps e Python. Appassionato di infrastructure as code e automazione. Forte esperienza nella leadership tecnica e nel mentoring di ingegneri junior.\n",
   "experience": [
     {
       "id": "exp_1",
       "company": "Tech Corp",
-      "title": "Senior Software Engineer",
+      "title": "Ingegnere Software Senior",
       "period": "2021 - Present",
       "location": "San Francisco, CA",
       "technologies": [
@@ -21,12 +32,12 @@
         "PostgreSQL",
         "GitOps"
       ],
-      "description": "Guidato l'architettura e l'implementazione di una piattaforma di microservizi che serve 10 milioni di utenti. Progettato e costruito infrastruttura Kubernetes riducendo i tempi di deployment del 60%. Mentoring di un team di 4 ingegneri junior. Stabilito pipeline di test automatizzati e CI/CD utilizzando GitHub Actions. Ridotto la latenza del sistema del 40% attraverso lavori di ottimizzazione.\n"
+      "description": "Guidato l'architettura e l'implementazione di una piattaforma microservizi che serve 10 milioni di utenti. Progettato e costruito infrastruttura Kubernetes riducendo i tempi di deploy del 60%. Formato un team di 4 ingegneri junior. Stabilito pipeline di test automatizzati e CI/CD usando GitHub Actions. Ridotto la latenza del sistema del 40%.\n"
     },
     {
       "id": "exp_2",
       "company": "StartupXYZ",
-      "title": "Software Engineer",
+      "title": "Ingegnere Software",
       "period": "2018 - 2021",
       "location": "Palo Alto, CA",
       "technologies": [
@@ -35,12 +46,12 @@
         "Docker",
         "GCP"
       ],
-      "description": "Costruito servizi backend che gestiscono 100.000 richieste al giorno. Progettato e implementato una pipeline di dati in tempo reale utilizzando Apache Kafka. Sviluppato componenti React frontend utilizzati da 50.000+ utenti. Implementato infrastructure-as-code utilizzando Terraform, riducendo il tempo di provisioning da giorni a minuti.\n"
+      "description": "Costruito servizi backend che elaborano 100.000 richieste al giorno. Progettato e implementato una pipeline di dati in tempo reale usando Apache Kafka. Sviluppato componenti React frontend usati da 50.000+ utenti. Implementato infrastructure-as-code usando Terraform.\n"
     },
     {
       "id": "exp_3",
       "company": "DataSoft",
-      "title": "Junior Software Engineer",
+      "title": "Ingegnere Software Junior",
       "period": "2016 - 2018",
       "location": "Mountain View, CA",
       "technologies": [
@@ -48,7 +59,7 @@
         "MySQL",
         "Linux"
       ],
-      "description": "Sviluppato applicazioni web Python per la piattaforma di analisi dati. Ottimizzato query di database riducendo i tempi di risposta del 70%. Implementato test automatizzati aumentando la copertura del codice all'85%. Collaborato con il team di prodotto per consegnare funzionalità in tempo.\n"
+      "description": "Sviluppato applicazioni web Python per piattaforma di analisi dati. Ottimizzato query di database riducendo i tempi di risposta del 70%. Implementato test automatizzati aumentando la copertura dei test all'85%.\n"
     }
   ],
   "education": [
@@ -62,29 +73,31 @@
     {
       "id": "edu_2",
       "degree": "Master in Ingegneria del Software",
-      "school": "Stanford University",
-      "graduation_year": 2020,
-      "description": "Focus sull'architettura software, pratiche DevOps e infrastruttura cloud. Progetto di tesi sull'automazione dell'infrastruttura.\n"
+      "school": "Amazon Web Services",
+      "graduation_year": 2022,
+      "description": "Focus su architettura software, pratiche DevOps e infrastruttura cloud. Progetto di tesi sull'automazione dell'infrastruttura.\n"
     }
   ],
   "skills": [
     {
-      "category": "Backend e Infrastruttura",
+      "category": "Backend & Infrastructure",
       "items": [
         "Python",
         "Kubernetes",
         "Docker",
         "Terraform",
         "AWS",
-        "GCP"
+        "GCP",
+        "Linux"
       ]
     },
     {
-      "category": "Database",
+      "category": "Databases & Streaming",
       "items": [
         "PostgreSQL",
         "MySQL",
-        "Apache Kafka"
+        "Apache Kafka",
+        "Redis"
       ]
     },
     {
@@ -92,7 +105,18 @@
       "items": [
         "React",
         "JavaScript",
+        "HTML/CSS",
         "Tailwind CSS"
+      ]
+    },
+    {
+      "category": "DevOps & Tools",
+      "items": [
+        "GitHub Actions",
+        "Jenkins",
+        "GitOps",
+        "Prometheus",
+        "ELK Stack"
       ]
     }
   ],
@@ -102,21 +126,28 @@
       "title": "AWS Certified Solutions Architect - Professional",
       "issuer": "Amazon Web Services",
       "issued_date": "2022-06-15",
-      "expires_date": null
+      "expires_date": "2025-06-15"
+    },
+    {
+      "id": "cert_2",
+      "title": "Kubernetes Application Developer (CKAD)",
+      "issuer": "Cloud Native Computing Foundation",
+      "issued_date": "2021-09-20",
+      "expires_date": "2024-09-20"
     }
   ],
   "languages": [
     {
-      "name": "Italiano",
-      "level": "Nativo"
+      "name": "English",
+      "level": "Native"
     },
     {
-      "name": "Inglese",
-      "level": "Fluente"
+      "name": "Spanish",
+      "level": "Intermediate"
     },
     {
-      "name": "Francese",
-      "level": "Intermedio"
+      "name": "Mandarin",
+      "level": "Basic"
     }
   ],
   "projects": [
@@ -128,7 +159,7 @@
         "Kubernetes",
         "Docker"
       ],
-      "description": "Creato operatore Kubernetes open-source per la gestione automatizzata dei database. 10k+ download. Pubblicato nei Helm Charts.\n",
+      "description": "Creato un operatore Kubernetes open-source per la gestione automatizzata dei database. 10k+ download. Pubblicato negli Helm Charts.\n",
       "url": "https://github.com/example/db-operator"
     },
     {
@@ -139,7 +170,7 @@
         "Click",
         "AWS SDK"
       ],
-      "description": "Costruito strumento CLI per l'automazione dell'infrastruttura, utilizzato da 200+ sviluppatori. Supporta AWS, GCP e Kubernetes.\n",
+      "description": "Costruito uno strumento CLI per l'automazione dell'infrastruttura, usato da 200+ sviluppatori. Supporta AWS, GCP e Kubernetes.\n",
       "url": "https://github.com/example/infra-cli"
     }
   ],
@@ -150,7 +181,8 @@
       "skills": "Skills",
       "projects": "Projects",
       "certifications": "Certifications",
-      "summary": "Summary"
+      "summary": "Summary",
+      "languages": "Languages"
     },
     "fr": {
       "experience": "Expérience",
@@ -158,7 +190,8 @@
       "skills": "Compétences",
       "projects": "Projets",
       "certifications": "Certifications",
-      "summary": "Résumé"
+      "summary": "Résumé",
+      "languages": "Langues"
     },
     "it": {
       "experience": "Esperienze",
@@ -166,7 +199,8 @@
       "skills": "Competenze",
       "projects": "Progetti",
       "certifications": "Certificazioni",
-      "summary": "Riassunto"
+      "summary": "Riassunto",
+      "languages": "Lingue"
     }
   }
 }
