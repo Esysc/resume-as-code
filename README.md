@@ -148,20 +148,80 @@ Your resume is now live at: `https://YOUR_USERNAME.github.io/resume-as-code`
 
 See [ROADMAP.md](docs/ROADMAP.md) for details.
 
+## � Multi-Language Translation
+
+The project uses **English as the base language**. Translation files (French,
+Italian) only need to contain fields that require translation — all other data
+is automatically inherited from `cv_en.yml`.
+
+### How It Works
+
+```text
+cv_en.yml (base)          cv_fr.yml (overrides)
+─────────────────         ────────────────────
+personal:                 # Not needed - inherited
+  name: John Doe
+  email: john@example.com
+  company: Tech Corp      # Not needed - inherited
+
+summary: "Full-stack      summary: "Ingénieur
+  engineer..."              full-stack..."
+
+experience:               experience:
+  - id: exp_1               - id: exp_1
+    company: Tech Corp        title: "Ingénieur Senior"
+    title: "Senior Eng"       description: "Dirigé..."
+    period: 2021-Present
+    description: "Led..."
+```
+
+### What to Include in Translation Files
+
+| Include (translated)         | Exclude (inherited from English) |
+| ---------------------------- | -------------------------------- |
+| `summary`                    | `personal` (name, email, etc.)   |
+| `experience[].title`         | `experience[].company`           |
+| `experience[].description`   | `experience[].period`            |
+| `education[].degree`         | `experience[].technologies`      |
+| `education[].description`    | `education[].school`             |
+| `skills[].category`          | `education[].graduation_year`    |
+| `projects[].title`           | `projects[].url`                 |
+| `projects[].description`     | `projects[].technologies`        |
+| `languages[].name`           | All URLs, dates, company names   |
+| `languages[].level`          |                                  |
+
+### Matching by ID
+
+List items (experience, education, projects) are matched by their `id` field:
+
+```yaml
+# cv_en.yml
+experience:
+  - id: exp_1
+    company: Tech Corp
+    title: Senior Engineer
+
+# cv_fr.yml - only override translated fields
+experience:
+  - id: exp_1
+    title: Ingénieur Senior
+    # company inherited from English
+```
+
 ## 🏗️ Architecture
 
 ```text
 cv-as-code/
 ├── cv-data/                    # Your CV data
-│   ├── cv_en.yml              # English (master)
-│   ├── cv_fr.yml              # French
-│   ├── cv_it.yml              # Italian
+│   ├── cv_en.yml              # English (base - complete data)
+│   ├── cv_fr.yml              # French (translations only)
+│   ├── cv_it.yml              # Italian (translations only)
 │   └── ui_translations.yml    # UI text translations
 │
 ├── backend/                    # Python infrastructure
 │   ├── generate.py            # Main entry point
 │   ├── parsers/
-│   │   ├── yaml_parser.py     # Parse YAML
+│   │   ├── yaml_parser.py     # Parse YAML + merge translations
 │   │   └── schema.py          # Validate schema
 │   ├── generators/
 │   │   ├── html_generator.py  # → HTML
