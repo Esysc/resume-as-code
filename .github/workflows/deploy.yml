@@ -50,7 +50,7 @@ jobs:
       # React: Build app (outputs to ../dist, merging with generated files)
       - uses: actions/setup-node@v6
         with:
-          node-version: "22"
+          node-version: "24"
       - run: |
           cd web
           npm install
@@ -75,7 +75,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: "22"
+          node-version: "24"
       - run: |
           cd web
           npm install
