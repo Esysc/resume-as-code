@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import "./styles/App.css";
 import html2pdf from "html2pdf.js";
+import { useEffect, useState } from "react";
+import "./styles/App.css";
 
 function App() {
   const [cvData, setCvData] = useState(null);
@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     // Load CV data for current language
-    fetch(`/cv_${currentLang}.json`)
+    fetch(`${import.meta.env.BASE_URL}cv_${currentLang}.json`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
