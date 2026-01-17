@@ -47,18 +47,13 @@ jobs:
       # React: Build app
       - uses: actions/setup-node@v6
         with:
-          node-version: "18"
+          node-version: "22"
       - run: |
           cd web
           npm install
           npm run build
 
-      # Copy React build to dist
-      - run: |
-          rm -rf dist
-          mv web/dist dist
-
-      # Deploy to Pages
+      # Deploy to Pages (vite outputs directly to ../dist)
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
