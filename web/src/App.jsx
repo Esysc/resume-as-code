@@ -1,11 +1,22 @@
 import html2pdf from "html2pdf.js";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./styles/App.css";
 
 function App() {
   const [cvData, setCvData] = useState(null);
   const [currentLang, setCurrentLang] = useState("en");
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Obfuscated email handler - builds mailto dynamically to prevent scraping
+  const handleContact = useCallback(() => {
+    if (!cvData?.personal?.email) return;
+    // Split and rebuild to avoid static mailto: in HTML
+    const parts = cvData.personal.email.split("@");
+    if (parts.length === 2) {
+      const link = ["ma", "il", "to", ":"].join("") + parts[0] + "@" + parts[1];
+      window.location.href = link;
+    }
+  }, [cvData]);
 
   useEffect(() => {
     // Load CV data for current language
@@ -110,6 +121,9 @@ function App() {
                 )}
             </div>
             <div className="header-actions">
+              <button onClick={handleContact} className="contact-btn">
+                ✉️ Contact
+              </button>
               <button onClick={downloadPDF} className="download-btn">
                 📄 Download PDF
               </button>
