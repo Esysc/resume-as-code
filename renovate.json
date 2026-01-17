@@ -4,10 +4,10 @@
   "labels": ["dependencies"],
   "packageRules": [
     {
-      "description": "Keep Python < 3.13",
-      "matchManagers": ["pip_requirements", "pip-compile", "poetry", "pyproject"],
-      "matchPackageNames": ["python"],
-      "allowedVersions": "<3.13"
+      "description": "Disable Python runtime version updates in GitHub Actions",
+      "matchManagers": ["github-actions"],
+      "matchDepNames": ["actions/setup-python"],
+      "enabled": false
     },
     {
       "description": "Group all Python dependencies",
