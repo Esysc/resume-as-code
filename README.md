@@ -3,10 +3,13 @@
 > **Infrastructure-as-Code for your resume**. Single YAML source of truth,
 > automatic multi-format generation, version-controlled career history.
 
-![Build Status](https://github.com/Esysc/resume-as-code/actions/workflows/deploy.yml/badge.svg)
+[![Build Status](https://github.com/Esysc/resume-as-code/actions/workflows/deploy.yml/badge.svg)](https://github.com/Esysc/resume-as-code/actions/workflows/deploy.yml)
+[![GitHub Pages](https://img.shields.io/badge/demo-live-brightgreen)](https://esysc.github.io/resume-as-code/)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.12+-blue.svg)
 ![Node.js](https://img.shields.io/badge/node-24+-blue.svg)
+
+![Screenshot](docs/screenshot.png)
 
 ## 🎯 Why Resume as Code?
 
