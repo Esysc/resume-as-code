@@ -1,0 +1,138 @@
+personal:
+  name: John Doe
+  email: john.doe@example.com
+  phone: "+1 (555) 123-4567"
+  location: San Francisco, CA, USA
+  birth_date: 1990-05-15
+
+summary: >
+  Ingegnere software full-stack con 8+ anni di esperienza nella costruzione di sistemi
+  scalabili. Competenza in infrastruttura cloud, DevOps e Python. Appassionato di
+  infrastructure as code e automazione. Forte track record di leadership tecnica e
+  mentoring di ingegneri junior.
+  mentoring di ingegneri junior.
+
+experience:
+  - id: exp_1
+    company: Tech Corp
+    location: San Francisco, CA
+    period: 2021 - Present
+    title: Senior Software Engineer
+    technologies:
+      - Python
+      - Kubernetes
+      - AWS
+      - PostgreSQL
+      - GitOps
+    description: >
+      Guidato l'architettura e l'implementazione di una piattaforma di microservizi che serve 10 milioni di utenti.
+      Progettato e costruito infrastruttura Kubernetes riducendo i tempi di deployment del 60%.
+      Mentoring di un team di 4 ingegneri junior. Stabilito pipeline di test automatizzati e CI/CD utilizzando GitHub Actions.
+      Ridotto la latenza del sistema del 40% attraverso lavori di ottimizzazione.
+
+  - id: exp_2
+    company: StartupXYZ
+    location: Palo Alto, CA
+    period: 2018 - 2021
+    title: Software Engineer
+    technologies:
+      - Python
+      - React
+      - Docker
+      - GCP
+    description: >
+      Costruito servizi backend che gestiscono 100.000 richieste al giorno. Progettato e implementato
+      una pipeline di dati in tempo reale utilizzando Apache Kafka. Sviluppato componenti React frontend
+      utilizzati da 50.000+ utenti. Implementato infrastructure-as-code utilizzando Terraform,
+      riducendo il tempo di provisioning da giorni a minuti.
+
+  - id: exp_3
+    company: DataSoft
+    location: Mountain View, CA
+    period: 2016 - 2018
+    title: Junior Software Engineer
+    technologies:
+      - Python
+      - MySQL
+      - Linux
+    description: >
+      Sviluppato applicazioni web Python per la piattaforma di analisi dati.
+      Ottimizzato query di database riducendo i tempi di risposta del 70%.
+      Implementato test automatizzati aumentando la copertura del codice all'85%.
+      Collaborato con il team di prodotto per consegnare funzionalità in tempo.
+
+education:
+  - id: edu_1
+    degree: Laurea in Informatica
+    school: University of California, Berkeley
+    graduation_year: 2016
+    description: >
+      Corsi rilevanti: Sistemi Distribuiti, Algoritmi, Sistemi Operativi,
+      Sistemi di Database, Ingegneria del Software.
+
+  - id: edu_2
+    degree: Master in Ingegneria del Software
+    school: Stanford University
+    graduation_year: 2020
+    description: >
+      Focus sull'architettura software, pratiche DevOps e infrastruttura cloud.
+      Progetto di tesi sull'automazione dell'infrastruttura.
+
+skills:
+  - category: Backend e Infrastruttura
+    items:
+      - Python
+      - Kubernetes
+      - Docker
+      - Terraform
+      - AWS
+      - GCP
+
+  - category: Database
+    items:
+      - PostgreSQL
+      - MySQL
+      - Apache Kafka
+
+  - category: Frontend
+    items:
+      - React
+      - JavaScript
+      - Tailwind CSS
+
+certifications:
+  - id: cert_1
+    title: AWS Certified Solutions Architect - Professional
+    issuer: Amazon Web Services
+    issued_date: 2022-06-15
+
+projects:
+  - id: proj_1
+    title: Operatore Kubernetes Open Source
+    description: >
+      Creato operatore Kubernetes open-source per la gestione automatizzata dei database.
+      10k+ download. Pubblicato nei Helm Charts.
+    technologies:
+      - Go
+      - Kubernetes
+      - Docker
+    url: "https://github.com/example/db-operator"
+
+  - id: proj_2
+    title: Strumento CLI Python per Infrastruttura
+    description: >
+      Costruito strumento CLI per l'automazione dell'infrastruttura, utilizzato da 200+ sviluppatori.
+      Supporta AWS, GCP e Kubernetes.
+    technologies:
+      - Python
+      - Click
+      - AWS SDK
+    url: "https://github.com/example/infra-cli"
+
+languages:
+  - name: Italiano
+    level: Nativo
+  - name: Inglese
+    level: Fluente
+  - name: Francese
+    level: Intermedio
