@@ -79,6 +79,35 @@ function App() {
             <div>
               <h1>{cvData.personal.name}</h1>
               <p className="contact-info">{cvData.personal.location}</p>
+              {cvData.personal.socials &&
+                cvData.personal.socials.length > 0 && (
+                  <div className="social-links">
+                    {cvData.personal.website && (
+                      <a
+                        href={cvData.personal.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        🌐 Website
+                      </a>
+                    )}
+                    {cvData.personal.socials.map((social, idx) => (
+                      <a
+                        key={idx}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {social.platform === "linkedin" && "💼 LinkedIn"}
+                        {social.platform === "github" && "💻 GitHub"}
+                        {social.platform === "twitter" && "🐦 Twitter"}
+                        {!["linkedin", "github", "twitter"].includes(
+                          social.platform,
+                        ) && `🔗 ${social.platform}`}
+                      </a>
+                    ))}
+                  </div>
+                )}
             </div>
             <div className="header-actions">
               <button onClick={downloadPDF} className="download-btn">

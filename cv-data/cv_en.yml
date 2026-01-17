@@ -4,6 +4,12 @@ personal:
   phone: "+1 (555) 123-4567"
   location: San Francisco, CA, USA
   birth_date: 1990-05-15
+  website: https://johndoe.dev
+  socials:
+    - platform: linkedin
+      url: https://linkedin.com/in/johndoe
+    - platform: github
+      url: https://github.com/johndoe
 
 summary: >
   Full-stack software engineer with 8+ years of experience building scalable systems.

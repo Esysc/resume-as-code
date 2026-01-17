@@ -7,7 +7,7 @@ from pathlib import Path
 
 from backend.generators.pdf_generator import create_pdf_html, generate_pdf
 from backend.parsers.schema import validate_cv
-from backend.parsers.yaml_parser import parse_cv_file
+from backend.parsers.yaml_parser import parse_cv_file, parse_cv_with_base
 
 
 def test_pdf_generation():
@@ -26,8 +26,8 @@ def test_pdf_generation():
         # Extract language code from filename (cv_en.yml -> en)
         lang = cv_file.stem.replace("cv_", "")
 
-        # Parse CV data
-        cv_data = parse_cv_file(str(cv_file))
+        # Parse CV data (merge with base for non-English files)
+        cv_data = parse_cv_with_base(str(cv_file))
         cv_data = validate_cv(cv_data).model_dump()
         cv_data["translations"] = ui_translations
 
@@ -66,7 +66,7 @@ def test_pdf_styling():
     cv_file = cv_files[0]
     lang = cv_file.stem.replace("cv_", "")
 
-    cv_data = parse_cv_file(str(cv_file))
+    cv_data = parse_cv_with_base(str(cv_file))
     cv_data = validate_cv(cv_data).model_dump()
     cv_data["translations"] = ui_translations
 

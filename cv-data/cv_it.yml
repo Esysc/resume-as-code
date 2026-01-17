@@ -1,81 +1,48 @@
-personal:
-  name: John Doe
-  email: john.doe@example.com
-  phone: "+1 (555) 123-4567"
-  location: San Francisco, CA, USA
-  birth_date: 1990-05-15
+# Italian translations - inherits from cv_en.yml
+# Only include fields that need translation
 
 summary: >
-  Ingegnere software full-stack con 8+ anni di esperienza nella costruzione di sistemi
-  scalabili. Competenza in infrastruttura cloud, DevOps e Python. Appassionato di
-  infrastructure as code e automazione. Forte track record di leadership tecnica e
-  mentoring di ingegneri junior.
-  mentoring di ingegneri junior.
+  Ingegnere software full-stack con 8+ anni di esperienza nella costruzione di
+  sistemi scalabili. Esperto in infrastruttura cloud, DevOps e Python. Appassionato
+  di infrastructure as code e automazione. Forte esperienza nella leadership tecnica
+  e nel mentoring di ingegneri junior.
 
 experience:
   - id: exp_1
-    company: Tech Corp
-    location: San Francisco, CA
-    period: 2021 - Present
-    title: Senior Software Engineer
-    technologies:
-      - Python
-      - Kubernetes
-      - AWS
-      - PostgreSQL
-      - GitOps
+    title: Ingegnere Software Senior
     description: >
-      Guidato l'architettura e l'implementazione di una piattaforma di microservizi che serve 10 milioni di utenti.
-      Progettato e costruito infrastruttura Kubernetes riducendo i tempi di deployment del 60%.
-      Mentoring di un team di 4 ingegneri junior. Stabilito pipeline di test automatizzati e CI/CD utilizzando GitHub Actions.
-      Ridotto la latenza del sistema del 40% attraverso lavori di ottimizzazione.
+      Guidato l'architettura e l'implementazione di una piattaforma microservizi
+      che serve 10 milioni di utenti. Progettato e costruito infrastruttura Kubernetes
+      riducendo i tempi di deploy del 60%. Formato un team di 4 ingegneri junior.
+      Stabilito pipeline di test automatizzati e CI/CD usando GitHub Actions.
+      Ridotto la latenza del sistema del 40%.
 
   - id: exp_2
-    company: StartupXYZ
-    location: Palo Alto, CA
-    period: 2018 - 2021
-    title: Software Engineer
-    technologies:
-      - Python
-      - React
-      - Docker
-      - GCP
+    title: Ingegnere Software
     description: >
-      Costruito servizi backend che gestiscono 100.000 richieste al giorno. Progettato e implementato
-      una pipeline di dati in tempo reale utilizzando Apache Kafka. Sviluppato componenti React frontend
-      utilizzati da 50.000+ utenti. Implementato infrastructure-as-code utilizzando Terraform,
-      riducendo il tempo di provisioning da giorni a minuti.
+      Costruito servizi backend che elaborano 100.000 richieste al giorno. Progettato
+      e implementato una pipeline di dati in tempo reale usando Apache Kafka.
+      Sviluppato componenti React frontend usati da 50.000+ utenti. Implementato
+      infrastructure-as-code usando Terraform.
 
   - id: exp_3
-    company: DataSoft
-    location: Mountain View, CA
-    period: 2016 - 2018
-    title: Junior Software Engineer
-    technologies:
-      - Python
-      - MySQL
-      - Linux
+    title: Ingegnere Software Junior
     description: >
-      Sviluppato applicazioni web Python per la piattaforma di analisi dati.
-      Ottimizzato query di database riducendo i tempi di risposta del 70%.
-      Implementato test automatizzati aumentando la copertura del codice all'85%.
-      Collaborato con il team di prodotto per consegnare funzionalità in tempo.
+      Sviluppato applicazioni web Python per piattaforma di analisi dati. Ottimizzato
+      query di database riducendo i tempi di risposta del 70%. Implementato test
+      automatizzati aumentando la copertura dei test all'85%.
 
 education:
   - id: edu_1
     degree: Laurea in Informatica
-    school: University of California, Berkeley
-    graduation_year: 2016
     description: >
-      Corsi rilevanti: Sistemi Distribuiti, Algoritmi, Sistemi Operativi,
-      Sistemi di Database, Ingegneria del Software.
+      Corsi rilevanti: Sistemi Distribuiti, Algoritmi, Sistemi Operativi, Sistemi
+      di Database, Ingegneria del Software.
 
   - id: edu_2
     degree: Master in Ingegneria del Software
-    school: Stanford University
-    graduation_year: 2020
     description: >
-      Focus sull'architettura software, pratiche DevOps e infrastruttura cloud.
+      Focus su architettura software, pratiche DevOps e infrastruttura cloud.
       Progetto di tesi sull'automazione dell'infrastruttura.
 
 skills:
@@ -100,38 +67,22 @@ skills:
       - JavaScript
       - Tailwind CSS
 
-certifications:
-  - id: cert_1
-    title: AWS Certified Solutions Architect - Professional
-    issuer: Amazon Web Services
-    issued_date: 2022-06-15
-
 projects:
   - id: proj_1
     title: Operatore Kubernetes Open Source
     description: >
-      Creato operatore Kubernetes open-source per la gestione automatizzata dei database.
-      10k+ download. Pubblicato nei Helm Charts.
-    technologies:
-      - Go
-      - Kubernetes
-      - Docker
-    url: "https://github.com/example/db-operator"
+      Creato un operatore Kubernetes open-source per la gestione automatizzata
+      dei database. 10k+ download. Pubblicato negli Helm Charts.
 
   - id: proj_2
     title: Strumento CLI Python per Infrastruttura
     description: >
-      Costruito strumento CLI per l'automazione dell'infrastruttura, utilizzato da 200+ sviluppatori.
-      Supporta AWS, GCP e Kubernetes.
-    technologies:
-      - Python
-      - Click
-      - AWS SDK
-    url: "https://github.com/example/infra-cli"
+      Costruito uno strumento CLI per l'automazione dell'infrastruttura, usato
+      da 200+ sviluppatori. Supporta AWS, GCP e Kubernetes.
 
 languages:
   - name: Italiano
-    level: Nativo
+    level: Madrelingua
   - name: Inglese
     level: Fluente
   - name: Francese

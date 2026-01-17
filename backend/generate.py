@@ -10,7 +10,7 @@ from backend.generators.html_generator import generate_html
 from backend.generators.json_generator import generate_json
 from backend.generators.pdf_generator import generate_pdf
 from backend.parsers.schema import validate_cv
-from backend.parsers.yaml_parser import parse_cv_file
+from backend.parsers.yaml_parser import parse_cv_file, parse_cv_with_base
 
 
 def main():
@@ -41,9 +41,9 @@ def main():
 
         print(f"\n📝 Processing: {lang.upper()}")
 
-        # Parse YAML
+        # Parse YAML (with English as base for non-English languages)
         try:
-            cv_data = parse_cv_file(str(cv_file))
+            cv_data = parse_cv_with_base(str(cv_file))
             print("  ✓ Parsed YAML")
         except Exception as e:
             print(f"  ✗ Failed to parse: {e}")

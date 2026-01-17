@@ -5,6 +5,16 @@ from typing import Any
 from weasyprint import HTML  # type: ignore
 
 
+def _render_social_links(socials: list[dict[str, str]]) -> str:
+    """Render social links as HTML spans."""
+    parts = []
+    for s in socials:
+        url = s["url"]
+        platform = s["platform"].capitalize()
+        parts.append(f'<span><a href="{url}">{platform}</a></span>')
+    return "".join(parts)
+
+
 def generate_pdf(
     cv_data: dict[str, Any], output_path: str, language: str = "en"
 ) -> None:
@@ -39,6 +49,8 @@ def create_pdf_html(cv_data: dict[str, Any], language: str) -> str:
     location = personal["location"] or ""
     birth_date = personal.get("birth_date")
     birth_date_str = str(birth_date) if birth_date else ""
+    website = personal.get("website", "")
+    socials = personal.get("socials", [])
 
     html = f"""<!DOCTYPE html>
 <html>
@@ -198,6 +210,10 @@ def create_pdf_html(cv_data: dict[str, Any], language: str) -> str:
                 {f'<span>{location}</span>' if location else ''}
                 {f'<span>{birth_date_str}</span>' if birth_date_str else ''}
             </p>
+            <p>
+                {f'<span><a href="{website}">{website}</a></span>' if website else ''}
+                {_render_social_links(socials)}
+            </p>
         </div>
     </div>
 
@@ -285,6 +301,22 @@ def create_pdf_html(cv_data: dict[str, Any], language: str) -> str:
         <div class="entry-header">{cert['title']}</div>
         <div class="entry-subheader">{cert.get('issuer', '')}</div>
         <div class="entry-meta">{cert.get('issued_date', '')}</div>
+    </div>
+"""
+
+    if cv_data.get("languages"):
+        html += f"""
+    <h2>{cv_data['translations'][language]['languages']}</h2>
+    <div class="skills">
+"""
+        for lang_item in cv_data.get("languages", []):
+            html += f"""
+        <div>
+            <div class="skill-category">{lang_item['name']}</div>
+            <div class="skill-items">{lang_item['level']}</div>
+        </div>
+"""
+        html += """
     </div>
 """
 

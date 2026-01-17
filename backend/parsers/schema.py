@@ -6,6 +6,13 @@ from typing import Any, Dict, List, Optional
 from pydantic import BaseModel, EmailStr
 
 
+class SocialLink(BaseModel):
+    """Social link entry."""
+
+    platform: str
+    url: str
+
+
 class PersonalInfo(BaseModel):
     """Personal information section."""
 
@@ -14,6 +21,8 @@ class PersonalInfo(BaseModel):
     phone: Optional[str] = None
     location: Optional[str] = None
     birth_date: Optional[date] = None
+    website: Optional[str] = None
+    socials: Optional[List[SocialLink]] = []
 
 
 class Experience(BaseModel):

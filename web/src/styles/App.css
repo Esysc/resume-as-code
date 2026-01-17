@@ -69,6 +69,24 @@ body {
   font-size: 0.95em;
 }
 
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
 .header-actions {
   display: flex;
   gap: 10px;

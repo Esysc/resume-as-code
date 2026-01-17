@@ -5,6 +5,7 @@ en:
   projects: Projects
   certifications: Certifications
   summary: Summary
+  languages: Languages
 
 fr:
   experience: Expérience
@@ -13,6 +14,7 @@ fr:
   projects: Projets
   certifications: Certifications
   summary: Résumé
+  languages: Langues
 
 it:
   experience: Esperienze
@@ -21,3 +23,4 @@ it:
   projects: Progetti
   certifications: Certificazioni
   summary: Riassunto
+  languages: Lingue

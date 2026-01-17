@@ -6,12 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from backend.parsers.schema import validate_cv
-from backend.parsers.yaml_parser import parse_cv_file as _parse_cv_file
-
-
-def parse_cv_file(filepath: str) -> dict[str, Any]:
-    """Parse CV YAML file with proper type hints."""
-    return _parse_cv_file(filepath)
+from backend.parsers.yaml_parser import parse_cv_with_base
 
 
 def main():
@@ -29,8 +24,8 @@ def main():
             continue
 
         try:
-            # Parse YAML
-            cv_data: dict[str, Any] = parse_cv_file(str(cv_file))
+            # Parse YAML (merges with English base for non-English files)
+            cv_data: dict[str, Any] = parse_cv_with_base(str(cv_file))
 
             # Validate schema
             validate_cv(cv_data)
