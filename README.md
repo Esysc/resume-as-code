@@ -1,14 +1,14 @@
-# CV as Code ✨
+# resume as Code ✨
 
 > **Infrastructure-as-Code for your resume**. Single YAML source of truth,
 > automatic multi-format generation, version-controlled career history.
 
-![Build Status](https://github.com/YOUR_USERNAME/cv-as-code/actions/workflows/deploy.yml/badge.svg)
+![Build Status](https://github.com/Esysc/resume-as-code/actions/workflows/deploy.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
-![Node.js](https://img.shields.io/badge/node-18+-blue.svg)
+![Python](https://img.shields.io/badge/python-3.12+-blue.svg)
+![Node.js](https://img.shields.io/badge/node-24+-blue.svg)
 
-## 🎯 Why CV as Code?
+## 🎯 Why Resume as Code?
 
 Traditional resume builders force you into templates and web UIs.
 CV as Code treats your resume like **infrastructure**:
@@ -55,7 +55,7 @@ npm install
 cd ..
 ```
 
-### 3. Customize Your CV
+### 3. Customize Your resume
 
 Edit `cv-data/cv_en.yml`:
 
@@ -118,7 +118,7 @@ GitHub Actions automatically:
 2. Builds React app
 3. Deploys to GitHub Pages
 
-Your CV is now live at: `https://YOUR_USERNAME.github.io/cv-as-code`
+Your resume is now live at: `https://YOUR_USERNAME.github.io/resume-as-code`
 
 ## 📚 Features
 
