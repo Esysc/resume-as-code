@@ -2,6 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
   "labels": ["dependencies"],
+  "ignoreDeps": ["python", "node"],
   "packageRules": [
     {
       "description": "Disable Python runtime version updates in GitHub Actions",
