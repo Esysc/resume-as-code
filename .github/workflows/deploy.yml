@@ -55,7 +55,7 @@ jobs:
       - run: |
           cd web
           npm install
-          npm run build -- --emptyOutDir
+          VITE_BASE_PATH=/resume-as-code/ npm run build -- --emptyOutDir
 
       # Deploy to Pages
       - uses: peaceiris/actions-gh-pages@v4
