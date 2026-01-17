@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ cv['personal']['name'] }} - CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 { color: #2563eb; }
+        h2 { color: #1e40af; margin-top: 30px; }
+        .contact { color: #666; font-size: 0.9em; }
+        .experience, .education, .skills, .certifications {
+            margin-bottom: 20px;
+        }
+        .experience h3, .education h3 {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ cv['personal']['name'] }}</h1>
+    <div class="contact">
+        <p>{{ cv['personal']['email'] }}{% if cv['personal']['phone'] %} | {{ cv['personal']['phone'] }}{% endif %}{% if cv['personal']['location'] %} | {{ cv['personal']['location'] }}{% endif %}{% if cv['personal']['birth_date'] %} | {{ cv['personal']['birth_date'] }}{% endif %}</p>
+    </div>
+
+    {% if cv['summary'] %}
+    <h2>Summary</h2>
+    <p>{{ cv['summary'] }}</p>
+    {% endif %}
+
+    {% if cv['experience'] %}
+    <h2 id="experience">{{ cv['translations'][lang].experience }}</h2>
+    {% for exp in cv['experience'] %}
+    <div class="experience">
+        <h3>{{ exp['title'] }} at {{ exp['company'] }}</h3>
+        <p><em>{{ exp['period'] }}{% if exp['location'] %} | {{ exp['location'] }}{% endif %}</em></p>
+        {% if exp['technologies'] %}
+        <p><strong>Technologies:</strong> {{ exp['technologies'] | join(', ') }}</p>
+        {% endif %}
+        <p>{{ exp['description'] }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if cv['education'] %}
+    <h2 id="education">{{ cv['translations'][lang].education }}</h2>
+    {% for edu in cv['education'] %}
+    <div class="education">
+        <h3>{{ edu['degree'] }}</h3>
+        <p><em>{{ edu['school'] }}{% if edu['graduation_year'] %} | {{ edu['graduation_year'] }}{% endif %}</em></p>
+        {% if edu['description'] %}
+        <p>{{ edu['description'] }}</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if cv['skills'] %}
+    <h2 id="skills">{{ cv['translations'][lang].skills }}</h2>
+    {% for skill in cv['skills'] %}
+    <div class="skills">
+        <h3>{{ skill['category'] }}</h3>
+        <ul>
+        {% for item in skill['items'] %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if cv['projects'] %}
+    <h2 id="projects">{{ cv['translations'][lang].projects }}</h2>
+    {% for proj in cv['projects'] %}
+    <div class="projects">
+        <h3>{{ proj['title'] }}</h3>
+        {% if proj['technologies'] %}
+        <p><strong>Technologies:</strong> {{ proj['technologies'] | join(', ') }}</p>
+        {% endif %}
+        <p>{{ proj['description'] }}</p>
+        {% if proj['url'] %}
+        <p><a href="{{ proj['url'] }}">{{ proj['url'] }}</a></p>
+        {% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if cv['certifications'] %}
+    <h2 id="certifications">{{ cv['translations'][lang].certifications }}</h2>
+    {% for cert in cv['certifications'] %}
+    <div class="certifications">
+        <h3>{{ cert['title'] }}</h3>
+        <p><em>{{ cert['issuer'] }}</em></p>
+        {% if cert.issued_date %}
+        <p>Issued: {{ cert.issued_date }} {% if cert.expires_date %} | Expires: {{ cert.expires_date }}{% endif %}</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if cv['languages'] %}
+    <h2>Languages</h2>
+    <ul>
+    {% for lang_item in cv['languages'] %}
+        <li>{{ lang_item['name'] }} - {{ lang_item['level'] }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+
+</body>
+</html>

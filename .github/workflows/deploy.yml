@@ -1,0 +1,62 @@
+name: Build & Deploy Resume
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      # Python setup and testing
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: |
+          pip install -r backend/requirements.txt
+          pip install pytest pre-commit
+      - run: |
+          # Run pre-commit checks
+          pre-commit run --all-files
+          # Run tests
+          export PYTHONPATH=$(pwd)
+          make test
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v6
+
+      # Python: Generate JSON for web app
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: |
+          pip install -r backend/requirements.txt
+          python backend/generate.py
+
+      # React: Build app
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "18"
+      - run: |
+          cd web
+          npm install
+          npm run build
+
+      # Copy React build to dist
+      - run: |
+          rm -rf dist
+          mv web/dist dist
+
+      # Deploy to Pages
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
