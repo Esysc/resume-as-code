@@ -23,6 +23,7 @@ jobs:
           # Run pre-commit checks
           pre-commit run --all-files
           # Run tests
+          export PYTHONPATH=$(pwd)
           make test
 
   build:
