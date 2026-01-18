@@ -41,6 +41,74 @@ function App() {
   useEffect(() => {
     if (cvData?.personal?.name) {
       document.title = `${cvData.personal.name} - CV`;
+      // Dynamic SEO meta tags
+      const setMeta = (selector, attr, value) => {
+        let tag = document.querySelector(selector);
+        if (!tag) {
+          tag = document.createElement("meta");
+          tag.setAttribute(
+            attr,
+            selector.includes("property")
+              ? selector.match(/property="([^"]+)"/)?.[1] || ""
+              : selector.match(/name="([^"]+)"/)?.[1] || "",
+          );
+          document.head.appendChild(tag);
+        }
+        tag.setAttribute("content", value);
+      };
+
+      const desc =
+        cvData.summary || `Professional resume of ${cvData.personal.name}`;
+      const title = `${cvData.personal.name} - CV`;
+      const baseUrl = window.location.origin + import.meta.env.BASE_URL;
+      const url = baseUrl;
+
+      // Standard description
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement("meta");
+        metaDesc.setAttribute("name", "description");
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.setAttribute("content", desc);
+
+      // Open Graph
+      const ensureOg = (prop, value) => {
+        let tag = document.querySelector(`meta[property="${prop}"]`);
+        if (!tag) {
+          tag = document.createElement("meta");
+          tag.setAttribute("property", prop);
+          document.head.appendChild(tag);
+        }
+        tag.setAttribute("content", value);
+      };
+      ensureOg("og:title", title);
+      ensureOg("og:description", desc);
+      ensureOg("og:type", "website");
+      ensureOg("og:url", url);
+
+      // Twitter Card
+      const ensureTw = (name, value) => {
+        let tag = document.querySelector(`meta[name="${name}"]`);
+        if (!tag) {
+          tag = document.createElement("meta");
+          tag.setAttribute("name", name);
+          document.head.appendChild(tag);
+        }
+        tag.setAttribute("content", value);
+      };
+      ensureTw("twitter:card", "summary");
+      ensureTw("twitter:title", title);
+      ensureTw("twitter:description", desc);
+
+      // Canonical URL
+      let linkCanonical = document.querySelector('link[rel="canonical"]');
+      if (!linkCanonical) {
+        linkCanonical = document.createElement("link");
+        linkCanonical.setAttribute("rel", "canonical");
+        document.head.appendChild(linkCanonical);
+      }
+      linkCanonical.setAttribute("href", url);
     }
   }, [cvData]);
 

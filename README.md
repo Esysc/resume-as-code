@@ -257,7 +257,7 @@ cv-as-code/
 | **Validation** | Pydantic | Type safety, schema enforcement |
 | **Templates** | Jinja2 | Flexible HTML generation |
 | **PDF** | WeasyPrint | Pure Python, no browser needed |
-| **Frontend** | React 18 | Modern, component-based |
+| **Frontend** | React 19 | Modern, component-based |
 | **Styling** | Tailwind CSS | Utility-first, customizable |
 | **Build** | Vite | Fast, modern bundler |
 | **Deploy** | GitHub Pages | Free, automated |
