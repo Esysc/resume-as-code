@@ -37,6 +37,13 @@ function App() {
       });
   }, [currentLang]);
 
+  // Update page title when CV data loads
+  useEffect(() => {
+    if (cvData?.personal?.name) {
+      document.title = `${cvData.personal.name} - CV`;
+    }
+  }, [cvData]);
+
   const downloadPDF = () => {
     // Hide navigation and header actions for PDF
     const nav = document.querySelector("nav");
