@@ -19,6 +19,7 @@ help:
 
 install:
 	pip install -r backend/requirements.txt
+	pip install -U pylint
 	cd web && npm install
 
 generate:
@@ -41,7 +42,7 @@ clean:
 	find . -type f -name "*.pyc" -delete
 
 lint:
-	cd backend && pylint **/*.py
+	python -m pylint backend/**/*.py
 	cd web && npm run lint
 
 .DEFAULT_GOAL := help

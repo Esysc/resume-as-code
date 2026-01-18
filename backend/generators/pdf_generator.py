@@ -7,12 +7,17 @@ from weasyprint import HTML  # type: ignore
 
 def _render_social_links(socials: list[dict[str, str]]) -> str:
     """Render social links as HTML spans."""
-    parts = []
+    parts: list[str] = []
     for s in socials:
         url = s["url"]
         platform = s["platform"].capitalize()
         parts.append(f'<span><a href="{url}">{platform}</a></span>')
     return "".join(parts)
+
+
+def _render_website_link(website: str) -> str:
+    """Render website link span if present."""
+    return f'<span><a href="{website}">{website}</a></span>' if website else ""
 
 
 def generate_pdf(cv_data: dict[str, Any], output_path: str, language: str = "en") -> None:
@@ -41,14 +46,16 @@ def create_pdf_html(cv_data: dict[str, Any], language: str) -> str:
         HTML string
     """
     personal = cv_data["personal"]
-    name = personal["name"] or "CV"
-    email = personal["email"] or ""
-    phone = personal["phone"] or ""
-    location = personal["location"] or ""
-    birth_date = personal.get("birth_date")
-    birth_date_str = str(birth_date) if birth_date else ""
-    website = personal.get("website", "")
-    socials = personal.get("socials", [])
+    person: dict[str, Any] = {
+        "name": personal.get("name") or "CV",
+        "email": personal.get("email") or "",
+        "phone": personal.get("phone") or "",
+        "location": personal.get("location") or "",
+        "birth_date": personal.get("birth_date"),
+        "website": personal.get("website", ""),
+        "socials": personal.get("socials", []),
+    }
+    person["birth_date_str"] = str(person["birth_date"]) if person["birth_date"] else ""
 
     html = f"""<!DOCTYPE html>
 <html>
@@ -200,17 +207,17 @@ def create_pdf_html(cv_data: dict[str, Any], language: str) -> str:
 </head>
 <body>
     <div class="header">
-        <h1>{name}</h1>
+            <h1>{person["name"]}</h1>
         <div class="contact">
             <p>
-                {f'<span>{email}</span>' if email else ''}
-                {f'<span>{phone}</span>' if phone else ''}
-                {f'<span>{location}</span>' if location else ''}
-                {f'<span>{birth_date_str}</span>' if birth_date_str else ''}
+                    {f'<span>{person["email"]}</span>' if person["email"] else ''}
+                    {f'<span>{person["phone"]}</span>' if person["phone"] else ''}
+                    {f'<span>{person["location"]}</span>' if person["location"] else ''}
+                    {f'<span>{person["birth_date_str"]}</span>' if person["birth_date_str"] else ''}
             </p>
             <p>
-                {f'<span><a href="{website}">{website}</a></span>' if website else ''}
-                {_render_social_links(socials)}
+                    {_render_website_link(person["website"])}
+                    {_render_social_links(person["socials"])}
             </p>
         </div>
     </div>
