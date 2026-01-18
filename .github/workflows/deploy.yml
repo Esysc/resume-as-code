@@ -24,7 +24,7 @@ jobs:
           python-version: "3.12"
       - run: |
           pip install -r backend/requirements.txt
-          pip install pytest pre-commit
+          pip install pytest pre-commit pylint
       - run: |
           # Run pre-commit checks
           pre-commit run --all-files
