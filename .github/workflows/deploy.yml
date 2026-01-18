@@ -28,8 +28,25 @@ jobs:
       - run: |
           # Run pre-commit checks
           pre-commit run --all-files
+      - run: |
+          # Run linters
+          make lint
+      - run: |
           # Run tests
           make test
+      - run: |
+          # Check pdf generation
+          make generate
+      - run: |
+          # Check dev server builds
+          make dev > dev.log 2>&1 &
+          echo "DEV_PID=$!" >> $GITHUB_ENV
+          sleep 5
+      - run: |
+          # use $DEV_PID from env if needed
+          curl -f http://localhost:3000/health
+          run: |
+          if [ -n "$DEV_PID" ]; then kill "$DEV_PID"; fi
 
   build:
     runs-on: ubuntu-latest
