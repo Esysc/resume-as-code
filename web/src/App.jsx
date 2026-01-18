@@ -7,14 +7,27 @@ function App() {
   const [currentLang, setCurrentLang] = useState("en");
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Obfuscated email handler - builds mailto dynamically to prevent scraping
+  // Obfuscated email handler - reverses obfuscation and builds mailto
   const handleContact = useCallback(() => {
     if (!cvData?.personal?.email) return;
-    // Split and rebuild to avoid static mailto: in HTML
-    const parts = cvData.personal.email.split("@");
-    if (parts.length === 2) {
-      const link = ["ma", "il", "to", ":"].join("") + parts[0] + "@" + parts[1];
+    try {
+      // Email is obfuscated: split@reverse->encode->reverse
+      const [userPart, domainPart] = cvData.personal.email.split("@");
+      // Reverse each part to get base64
+      const userB64 = userPart.split("").reverse().join("");
+      const domainB64 = domainPart.split("").reverse().join("");
+      // Decode base64
+      const userRev = atob(userB64);
+      const domainRev = atob(domainB64);
+      // Reverse again to get original
+      const user = userRev.split("").reverse().join("");
+      const domain = domainRev.split("").reverse().join("");
+      // Build mailto link
+      const email = `${user}@${domain}`;
+      const link = ["ma", "il", "to", ":"].join("") + email;
       window.location.href = link;
+    } catch (err) {
+      console.error("Failed to decode email:", err);
     }
   }, [cvData]);
 
@@ -196,9 +209,11 @@ function App() {
                 )}
             </div>
             <div className="header-actions">
-              <button onClick={handleContact} className="contact-btn">
-                ✉️ Contact
-              </button>
+              {cvData.personal?.email && (
+                <button onClick={handleContact} className="contact-btn">
+                  ✉️ Contact
+                </button>
+              )}
               <button onClick={downloadPDF} className="download-btn">
                 📄 Download PDF
               </button>
