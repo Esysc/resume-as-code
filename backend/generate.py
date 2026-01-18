@@ -74,7 +74,8 @@ def main():
             json_content = generate_json(cv_data)
             json_file = dist_dir / f"cv_{lang}.json"
             json_file.write_text(json_content)
-            # Generate sanitized JSON for web/public (no phone/DOB, base64 email)
+            # Generate sanitized JSON for web/public
+            # (no phone/DOB, base64 email)
             public_json_content = generate_public_json(cv_data)
             web_json_file = web_public_dir / f"cv_{lang}.json"
             web_json_file.write_text(public_json_content)

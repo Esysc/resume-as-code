@@ -76,7 +76,8 @@ def test_pdf_styling():
     assert "font-family: 'Inter'" in html_content
     assert "#2563eb" in html_content  # Professional blue color
     assert "text-align: center" in html_content  # Centered header
-    assert "border-bottom: 3px solid #2563eb" in html_content  # Header underline
+    # Header underline
+    assert "border-bottom: 3px solid #2563eb" in html_content
     assert "page-break-inside: avoid" in html_content  # Page break control
 
     print("✓ PDF styling test passed")

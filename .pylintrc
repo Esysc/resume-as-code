@@ -1,0 +1,13 @@
+[MASTER]
+# Load any plugins if needed
+
+[MESSAGES CONTROL]
+# You can disable specific messages here (optional)
+# disable=C0114,C0115,C0116
+
+[FORMAT]
+max-line-length=120
+
+[BASIC]
+# Allow short variable names like i, j in loops (optional)
+good-names=i,j,k,ex,Run,_,cv

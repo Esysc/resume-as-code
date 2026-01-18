@@ -71,11 +71,7 @@ def merge_lists_by_id(base_list: list[Any], override_list: list[Any]) -> list[An
             item_id = item["id"]
             # Find matching override
             override_item = next(
-                (
-                    o
-                    for o in override_list
-                    if isinstance(o, dict) and o.get("id") == item_id
-                ),
+                (o for o in override_list if isinstance(o, dict) and o.get("id") == item_id),
                 None,
             )
             if override_item:

@@ -15,9 +15,7 @@ def _render_social_links(socials: list[dict[str, str]]) -> str:
     return "".join(parts)
 
 
-def generate_pdf(
-    cv_data: dict[str, Any], output_path: str, language: str = "en"
-) -> None:
+def generate_pdf(cv_data: dict[str, Any], output_path: str, language: str = "en") -> None:
     """Generate PDF from CV data.
 
     Args:
